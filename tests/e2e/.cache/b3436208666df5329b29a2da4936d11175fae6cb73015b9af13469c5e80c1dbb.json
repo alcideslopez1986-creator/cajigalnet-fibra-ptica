@@ -1,0 +1,171 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-20T21:35:45.204Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "type",
+        "summary": "type \"Ana Pérez\" into textbox \"Nombre y apellido\"",
+        "target": {
+          "role": "textbox",
+          "name": "Nombre y apellido",
+          "placeholder": "María Gómez"
+        },
+        "value": "Ana Pérez"
+      },
+      {
+        "name": "type",
+        "summary": "type \"12345678\" into textbox \"Cédula\"",
+        "target": {
+          "role": "textbox",
+          "name": "Cédula",
+          "placeholder": "V-12345678"
+        },
+        "value": "12345678"
+      },
+      {
+        "name": "type",
+        "summary": "type \"04141234567\" into textbox \"Teléfono\"",
+        "target": {
+          "role": "textbox",
+          "name": "Teléfono",
+          "placeholder": "0414-1234567"
+        },
+        "value": "04141234567"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Yaguaraparo\"",
+        "target": {
+          "role": "button",
+          "name": "Yaguaraparo"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Yaguaraparo\" (2 of 2)",
+        "target": {
+          "role": "button",
+          "name": "Yaguaraparo",
+          "position": {
+            "index": 1,
+            "of": 2
+          }
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Yaguaraparo centro\"",
+        "target": {
+          "role": "button",
+          "name": "Yaguaraparo centro"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Sector La Chivera\"",
+        "target": {
+          "role": "button",
+          "name": "Sector La Chivera"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Enviar solicitud\"",
+        "target": {
+          "role": "button",
+          "name": "Enviar solicitud"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "portada-y-solicitud.e2e.ts::portada-y-solicitud",
+      "targetId": "web",
+      "instructionDigest": "e3324a1ed0f076e8b64afa4ad983ce2d351067c189eaa6ca365a9d1e402a087d",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "caffeine-inference.chat",
+      "model": "deepseek-v4.1-flash"
+    },
+    "summary": "Filled Nombre y apellido \"Ana Pérez\", Cédula 12345678, Teléfono 04141234567, chose Parroquia Yaguaraparo, Pueblo Yaguaraparo centro and Sector La Chivera, then pressed Enviar solicitud. The app showed \"¡Solicitud recibida!\" with reference number SOL-1.",
+    "startPath": "/instalacion",
+    "endPath": "/instalacion",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "¡Solicitud recibida!"
+      },
+      {
+        "text": "Ya tenemos tus datos y la zona donde vives."
+      },
+      {
+        "text": "Tu número de referencia"
+      },
+      {
+        "text": "SOL-1"
+      },
+      {
+        "text": "Guarda este número. Un asesor de Cajigalnet te contactará por WhatsApp para coordinar la visita técnica y confirmar la disponibilidad en tu sector."
+      },
+      {
+        "role": "link",
+        "name": "Volver al inicio"
+      },
+      {
+        "role": "button",
+        "name": "Enviar otra solicitud"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "heading",
+        "name": "Solicitar instalación"
+      },
+      {
+        "text": "Déjanos tus datos y la zona donde vives; te contactamos para agendar la visita."
+      },
+      {
+        "text": "Nombre y apellido"
+      },
+      {
+        "role": "textbox",
+        "name": "Nombre y apellido",
+        "placeholder": "María Gómez"
+      },
+      {
+        "text": "Cédula"
+      },
+      {
+        "role": "textbox",
+        "name": "Cédula",
+        "placeholder": "V-12345678"
+      },
+      {
+        "text": "Teléfono"
+      },
+      {
+        "role": "textbox",
+        "name": "Teléfono",
+        "placeholder": "0414-1234567"
+      }
+    ],
+    "endWaitMs": 11455,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

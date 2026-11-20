@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "acceso-cliente",
+    "kind": "interactive",
+    "goal": "Un cliente ingresa y ve su plan, megas y estado del servicio",
+    "requirementIndexes": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "acceptanceCriteriaIndexes": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      11,
+      19
+    ],
+    "steps": [
+      "Sign in",
+      "Open the account summary"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Mi Cuenta"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "Plan"
+      }
+    ]
+  }
+}

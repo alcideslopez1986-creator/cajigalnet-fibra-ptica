@@ -1,0 +1,352 @@
+// Version: 4.0.0
+type AccessControlState__201339279 =
+  {
+    var adminAssigned : Bool;
+    userRoles : Map__175655829<Principal, UserRole__91647283>
+  };
+type AccountId__552256128 = Nat;
+type AccountId__735511313 = AccountId__552256128;
+type AdminNotice__253010267 =
+  {body : Text; clientId : ?Nat; createdAt : Int; id : Nat; title : Text};
+type AdminNotice__733538726 =
+  {
+    body : Text;
+    clientId : ?ClientId__972566;
+    createdAt : Timestamp__76654774;
+    id : NoticeId__507055746;
+    title : Text
+  };
+type BcvRate__887012686 =
+  {
+    manual : Bool;
+    updatedAt : Timestamp__386817900;
+    value : Nat;
+    valueDate : Text
+  };
+type BcvRate__977951773 =
+  {manual : Bool; updatedAt : Int; value : Nat; valueDate : Text};
+type ClientId__349019566 = ClientId__724934594;
+type ClientId__724934594 = Nat;
+type ClientId__900668135 = ClientId__724934594;
+type ClientId__972566 = ClientId__724934594;
+type Client__488727031 =
+  {
+    cedula : Text;
+    contractedMegabits : Nat;
+    createdAt : Timestamp__892471135;
+    cutOffDay : Nat;
+    fullName : Text;
+    graceDays : Nat;
+    id : ClientId__900668135;
+    monthlyPriceUsd : Nat;
+    owner : ?Principal;
+    parishId : CoverageId__212410055;
+    passwordHash : Text;
+    periodTrafficMb : Nat;
+    phone : Text;
+    planName : Text;
+    sectorId : CoverageId__212410055;
+    status : ServiceStatus__988192048;
+    statusChangedAt : Timestamp__892471135;
+    townId : CoverageId__212410055;
+    username : Text
+  };
+type Client__993879096 =
+  {
+    cedula : Text;
+    contractedMegabits : Nat;
+    createdAt : Int;
+    cutOffDay : Nat;
+    fullName : Text;
+    graceDays : Nat;
+    id : Nat;
+    monthlyPriceUsd : Nat;
+    owner : ?Principal;
+    parishId : Nat;
+    passwordHash : Text;
+    periodTrafficMb : Nat;
+    phone : Text;
+    planName : Text;
+    sectorId : Nat;
+    status : {#activo; #porVencer; #suspendido};
+    statusChangedAt : Int;
+    townId : Nat;
+    username : Text
+  };
+type CoverageEntry__379316582 =
+  {
+    active : Bool;
+    id : Nat;
+    kind : {#parroquia; #pueblo; #sector};
+    name : Text;
+    parentId : ?Nat
+  };
+type CoverageEntry__809879239 =
+  {
+    active : Bool;
+    id : CoverageId__113096174;
+    kind : CoverageKind__477602091;
+    name : Text;
+    parentId : ?CoverageId__113096174
+  };
+type CoverageId__113096174 = CoverageId__212410055;
+type CoverageId__212410055 = Nat;
+type CoverageId__38299268 = CoverageId__212410055;
+type CoverageKind__477602091 = {#parroquia; #pueblo; #sector};
+type Data__1061330525<K, V> =
+  {var count : Nat__565224867; kvs : [var ?(K, V)]};
+type InstallRequestId__167736498 = Nat;
+type InstallRequestId__535588502 = InstallRequestId__167736498;
+type InstallRequestStatus__1008152828 = {#aprobada; #pendiente; #rechazada};
+type InstallRequest__1024038990 =
+  {
+    cedula : Text;
+    createdAt : Timestamp__76654774;
+    fullName : Text;
+    id : InstallRequestId__535588502;
+    parishId : CoverageId__38299268;
+    phone : Text;
+    reference : Text;
+    sectorId : CoverageId__38299268;
+    status : InstallRequestStatus__1008152828;
+    townId : CoverageId__38299268
+  };
+type InstallRequest__76468852 =
+  {
+    cedula : Text;
+    createdAt : Int;
+    fullName : Text;
+    id : Nat;
+    parishId : Nat;
+    phone : Text;
+    reference : Text;
+    sectorId : Nat;
+    status : {#aprobada; #pendiente; #rechazada};
+    townId : Nat
+  };
+type Internal__1060388275<K, V> =
+  {children : [var ?Node__1010487028<K, V>]; data : Data__1061330525<K, V>};
+type InvoiceId__224755668 = InvoiceId__909937669;
+type InvoiceId__909937669 = Nat;
+type InvoiceStatus__912082022 = {#anulada; #emitida; #pagada};
+type Invoice__107379741 =
+  {
+    amountBs : Nat;
+    amountUsd : Nat;
+    bcvRate : Nat;
+    clientId : Nat;
+    contractedMegabits : Nat;
+    id : Nat;
+    issuedAt : Int;
+    number : Text;
+    period : Text;
+    planName : Text;
+    status : {#anulada; #emitida; #pagada}
+  };
+type Invoice__752737744 =
+  {
+    amountBs : Nat;
+    amountUsd : Nat;
+    bcvRate : Nat;
+    clientId : ClientId__349019566;
+    contractedMegabits : Nat;
+    id : InvoiceId__224755668;
+    issuedAt : Timestamp__1061877594;
+    number : Text;
+    period : Text;
+    planName : Text;
+    status : InvoiceStatus__912082022
+  };
+type Leaf__8515789<K, V> = {data : Data__1061330525<K, V>};
+type Map__175655829<K, V> = Map__975833162<K, V>;
+type Map__925935234<K, V> =
+  {var root : Node__1010487028<K, V>; var size : Nat__565224867};
+type Map__975833162<K, V> = Map__925935234<K, V>;
+type Nat__565224867 = Nat__920180692;
+type Nat__920180692 = Nat;
+type NewActor__769816496 =
+  {
+    accessControlState : AccessControlState__201339279;
+    adminNotices : Map__175655829<Nat, AdminNotice__253010267>;
+    appState :
+      {
+        var adminMasterKey : Text;
+        var bcvRate : BcvRate__977951773;
+        var nextAccountId : Nat;
+        var nextAdminToken : Nat;
+        var nextClientId : Nat;
+        var nextCoverageId : Nat;
+        var nextInstallRequestId : Nat;
+        var nextInvoiceId : Nat;
+        var nextNoticeId : Nat;
+        var nextPaymentId : Nat;
+        var nextRecoveryCode : Nat;
+        var nextTicketId : Nat
+      };
+    clients : Map__175655829<Nat, Client__993879096>;
+    coverageEntries : Map__175655829<Nat, CoverageEntry__379316582>;
+    installRequests : Map__175655829<Nat, InstallRequest__76468852>;
+    invoices : Map__175655829<Nat, Invoice__107379741>;
+    paymentAccounts : Map__175655829<Nat, PaymentAccount__796660167>;
+    paymentReports : Map__175655829<Nat, PaymentReport__652265525>;
+    supportTickets : Map__175655829<Nat, SupportTicket__128766775>
+  };
+type Node__1010487028<K, V> =
+  {#internal : Internal__1060388275<K, V>; #leaf : Leaf__8515789<K, V>};
+type NoticeId__507055746 = NoticeId__539436524;
+type NoticeId__539436524 = Nat;
+type OldActor__512397517 = {};
+type PaymentAccount__307354627 =
+  {
+    accountNumber : Text;
+    active : Bool;
+    bank : Text;
+    documentId : Text;
+    holder : Text;
+    id : AccountId__735511313;
+    method : PaymentMethod__1022097888;
+    phone : Text
+  };
+type PaymentAccount__796660167 =
+  {
+    accountNumber : Text;
+    active : Bool;
+    bank : Text;
+    documentId : Text;
+    holder : Text;
+    id : Nat;
+    method : {#divisas; #pagoMovil; #transferenciaBs; #usdt; #zelle};
+    phone : Text
+  };
+type PaymentId__1028686908 = Nat;
+type PaymentId__363650680 = PaymentId__1028686908;
+type PaymentMethod__1022097888 =
+  {#divisas; #pagoMovil; #transferenciaBs; #usdt; #zelle};
+type PaymentReport__652265525 =
+  {
+    accountId : Nat;
+    amountBs : Nat;
+    amountUsd : Nat;
+    clientId : Nat;
+    createdAt : Int;
+    id : Nat;
+    method : {#divisas; #pagoMovil; #transferenciaBs; #usdt; #zelle};
+    paidAt : Int;
+    reference : Text;
+    status : {#aprobado; #pendiente; #rechazado}
+  };
+type PaymentReport__898290702 =
+  {
+    accountId : AccountId__735511313;
+    amountBs : Nat;
+    amountUsd : Nat;
+    clientId : ClientId__349019566;
+    createdAt : Timestamp__1061877594;
+    id : PaymentId__363650680;
+    method : PaymentMethod__1022097888;
+    paidAt : Timestamp__1061877594;
+    reference : Text;
+    status : PaymentStatus__671551282
+  };
+type PaymentStatus__671551282 = {#aprobado; #pendiente; #rechazado};
+type ServiceStatus__1010385203 = {#activo; #porVencer; #suspendido};
+type ServiceStatus__988192048 = ServiceStatus__1010385203;
+type SupportTicket__128766775 =
+  {
+    adminReply : ?Text;
+    category :
+      {#cambioClaveWifi; #lentitud; #luzRojaLos; #otro; #sinServicio};
+    clientId : Nat;
+    createdAt : Int;
+    description : Text;
+    id : Nat;
+    status : {#abierto; #enProceso; #resuelto};
+    updatedAt : Int
+  };
+type SupportTicket__460240397 =
+  {
+    adminReply : ?Text;
+    category : TicketCategory__809618352;
+    clientId : ClientId__972566;
+    createdAt : Timestamp__76654774;
+    description : Text;
+    id : TicketId__10065788;
+    status : TicketStatus__840122062;
+    updatedAt : Timestamp__76654774
+  };
+type TicketCategory__809618352 =
+  {#cambioClaveWifi; #lentitud; #luzRojaLos; #otro; #sinServicio};
+type TicketId__10065788 = TicketId__224230191;
+type TicketId__224230191 = Nat;
+type TicketStatus__840122062 = {#abierto; #enProceso; #resuelto};
+type Timestamp__1061877594 = Timestamp__301639476;
+type Timestamp__301639476 = Int;
+type Timestamp__386817900 = Timestamp__301639476;
+type Timestamp__76654774 = Timestamp__301639476;
+type Timestamp__892471135 = Timestamp__301639476;
+type UserRole__91647283 = {#admin; #guest; #user};
+{
+  "00000000_000000" : OldActor__512397517 -> NewActor__769816496
+}
+actor  {
+  stable accessControlState :
+    {
+      var adminAssigned : Bool;
+      userRoles : Map__175655829<Principal, UserRole__91647283>
+    };
+  stable adminNotices :
+    {
+      var root : Node__1010487028<Nat, AdminNotice__733538726>;
+      var size : Nat__565224867
+    };
+  stable appState :
+    {
+      var adminMasterKey : Text;
+      var bcvRate : BcvRate__887012686;
+      var nextAccountId : Nat;
+      var nextAdminToken : Nat;
+      var nextClientId : Nat;
+      var nextCoverageId : Nat;
+      var nextInstallRequestId : Nat;
+      var nextInvoiceId : Nat;
+      var nextNoticeId : Nat;
+      var nextPaymentId : Nat;
+      var nextRecoveryCode : Nat;
+      var nextTicketId : Nat
+    };
+  stable clients :
+    {
+      var root : Node__1010487028<Nat, Client__488727031>;
+      var size : Nat__565224867
+    };
+  stable coverageEntries :
+    {
+      var root : Node__1010487028<Nat, CoverageEntry__809879239>;
+      var size : Nat__565224867
+    };
+  stable installRequests :
+    {
+      var root : Node__1010487028<Nat, InstallRequest__1024038990>;
+      var size : Nat__565224867
+    };
+  stable invoices :
+    {
+      var root : Node__1010487028<Nat, Invoice__752737744>;
+      var size : Nat__565224867
+    };
+  stable paymentAccounts :
+    {
+      var root : Node__1010487028<Nat, PaymentAccount__307354627>;
+      var size : Nat__565224867
+    };
+  stable paymentReports :
+    {
+      var root : Node__1010487028<Nat, PaymentReport__898290702>;
+      var size : Nat__565224867
+    };
+  stable supportTickets :
+    {
+      var root : Node__1010487028<Nat, SupportTicket__460240397>;
+      var size : Nat__565224867
+    }
+};

@@ -1,0 +1,449 @@
+type Value = 
+ variant {
+   "bool": bool;
+   float: float64;
+   "int": int;
+   "nat": nat;
+   "null";
+   "text": text;
+ };
+type UserRole = 
+ variant {
+   admin;
+   guest;
+   user;
+ };
+type TransformationOutput = 
+ record {
+   body: blob;
+   headers: vec HttpHeader;
+   status: nat;
+ };
+type TransformationInput = 
+ record {
+   context: blob;
+   response: HttpRequestResult;
+ };
+type Timestamp = int;
+type TicketStatus = 
+ variant {
+   abierto;
+   enProceso;
+   resuelto;
+ };
+type TicketInput = 
+ record {
+   category: TicketCategory;
+   description: text;
+ };
+type TicketId = nat;
+type TicketCategory = 
+ variant {
+   cambioClaveWifi;
+   lentitud;
+   luzRojaLos;
+   otro;
+   sinServicio;
+ };
+type SupportTicket = 
+ record {
+   adminReply: opt text;
+   category: TicketCategory;
+   clientId: ClientId;
+   createdAt: Timestamp;
+   description: text;
+   id: TicketId;
+   status: TicketStatus;
+   updatedAt: Timestamp;
+ };
+type ServiceStatus = 
+ variant {
+   activo;
+   porVencer;
+   suspendido;
+ };
+type Result__1 = 
+ variant {
+   err: Error;
+   ok;
+ };
+type Result = 
+ record {
+   hasMore: bool;
+   rows: vec vec Cell;
+ };
+type ResetInput = 
+ record {
+   code: text;
+   newPassword: text;
+   phone: text;
+ };
+type RecoveryTicket = 
+ record {
+   code: text;
+   message: text;
+   whatsappUrl: text;
+ };
+type RecoveryInput = 
+ record {
+   cedula: text;
+   phone: text;
+ };
+type PaymentStatus = 
+ variant {
+   aprobado;
+   pendiente;
+   rechazado;
+ };
+type PaymentReportInput = 
+ record {
+   accountId: AccountId;
+   amountBs: nat;
+   amountUsd: nat;
+   method: PaymentMethod;
+   paidAt: Timestamp;
+   reference: text;
+ };
+type PaymentReport = 
+ record {
+   accountId: AccountId;
+   amountBs: nat;
+   amountUsd: nat;
+   clientId: ClientId;
+   createdAt: Timestamp;
+   id: PaymentId;
+   method: PaymentMethod;
+   paidAt: Timestamp;
+   reference: text;
+   status: PaymentStatus;
+ };
+type PaymentReceipt = 
+ record {
+   amountBs: nat;
+   amountUsd: nat;
+   approvedAt: Timestamp;
+   bcvRate: nat;
+   clientId: ClientId;
+   invoiceId: InvoiceId;
+   invoiceNumber: text;
+   paymentId: PaymentId;
+   whatsappUrl: text;
+ };
+type PaymentMethod = 
+ variant {
+   divisas;
+   pagoMovil;
+   transferenciaBs;
+   usdt;
+   zelle;
+ };
+type PaymentId = nat;
+type PaymentAccountInput = 
+ record {
+   accountNumber: text;
+   active: bool;
+   bank: text;
+   documentId: text;
+   holder: text;
+   method: PaymentMethod;
+   phone: text;
+ };
+type PaymentAccount = 
+ record {
+   accountNumber: text;
+   active: bool;
+   bank: text;
+   documentId: text;
+   holder: text;
+   id: AccountId;
+   method: PaymentMethod;
+   phone: text;
+ };
+type NoticeInput = 
+ record {
+   body: text;
+   clientId: opt ClientId;
+   title: text;
+ };
+type NoticeId = nat;
+type LoginInput = 
+ record {
+   identifier: text;
+   password: text;
+ };
+type InvoiceStatus = 
+ variant {
+   anulada;
+   emitida;
+   pagada;
+ };
+type InvoiceId = nat;
+type Invoice = 
+ record {
+   amountBs: nat;
+   amountUsd: nat;
+   bcvRate: nat;
+   clientId: ClientId;
+   contractedMegabits: nat;
+   id: InvoiceId;
+   issuedAt: Timestamp;
+   number: text;
+   period: text;
+   planName: text;
+   status: InvoiceStatus;
+ };
+type InstallRequestStatus = 
+ variant {
+   aprobada;
+   pendiente;
+   rechazada;
+ };
+type InstallRequestInput = 
+ record {
+   cedula: text;
+   fullName: text;
+   parishId: CoverageId;
+   phone: text;
+   sectorId: CoverageId;
+   townId: CoverageId;
+ };
+type InstallRequestId = nat;
+type InstallRequest = 
+ record {
+   cedula: text;
+   createdAt: Timestamp;
+   fullName: text;
+   id: InstallRequestId;
+   parishId: CoverageId;
+   phone: text;
+   reference: text;
+   sectorId: CoverageId;
+   status: InstallRequestStatus;
+   townId: CoverageId;
+ };
+type HttpRequestResult = 
+ record {
+   body: blob;
+   headers: vec HttpHeader;
+   status: nat;
+ };
+type HttpHeader = 
+ record {
+   name: text;
+   value: text;
+ };
+type Error = 
+ variant {
+   AmbiguousAttribute: record {
+                         field: text;
+                         sources: vec text;
+                       };
+   FrontendOriginMismatch: record {
+                             expected: vec text;
+                             got: text;
+                           };
+   FrontendOriginsNotConfigured;
+   MalformedCandid;
+   MissingField: text;
+   MixedSsoSources: record {
+                      otherKeys: vec text;
+                      ssoKeys: vec text;
+                    };
+   NoAttributes;
+   Stale: record {ageNs: nat;};
+   UnknownNonce;
+   UntrustedSsoSource: record {domain: text;};
+ };
+type DashboardMetrics = 
+ record {
+   activeClients: nat;
+   dueSoonClients: nat;
+   monthlyIncomeBs: nat;
+   monthlyIncomeUsd: nat;
+   pendingPayments: nat;
+   suspendedClients: nat;
+ };
+type CoverageKind = 
+ variant {
+   parroquia;
+   pueblo;
+   sector;
+ };
+type CoverageInput = 
+ record {
+   active: bool;
+   kind: CoverageKind;
+   name: text;
+   parentId: opt CoverageId;
+ };
+type CoverageId = nat;
+type CoverageEntry = 
+ record {
+   active: bool;
+   id: CoverageId;
+   kind: CoverageKind;
+   name: text;
+   parentId: opt CoverageId;
+ };
+type ClientView = 
+ record {
+   cedula: text;
+   contractedMegabits: nat;
+   cutOffDay: nat;
+   fullName: text;
+   graceDays: nat;
+   id: ClientId;
+   monthlyPriceUsd: nat;
+   parishId: CoverageId;
+   periodTrafficMb: nat;
+   phone: text;
+   planName: text;
+   sectorId: CoverageId;
+   status: ServiceStatus;
+   statusChangedAt: Timestamp;
+   townId: CoverageId;
+   username: text;
+ };
+type ClientInput = 
+ record {
+   cedula: text;
+   contractedMegabits: nat;
+   cutOffDay: nat;
+   fullName: text;
+   graceDays: nat;
+   monthlyPriceUsd: nat;
+   parishId: CoverageId;
+   password: text;
+   phone: text;
+   planName: text;
+   sectorId: CoverageId;
+   townId: CoverageId;
+   username: text;
+ };
+type ClientId = nat;
+type Cell = 
+ record {
+   name: text;
+   value: Value;
+ };
+type BcvRate = 
+ record {
+   manual: bool;
+   updatedAt: Timestamp;
+   value: nat;
+   valueDate: text;
+ };
+type AdminSession = 
+ record {
+   expiresAt: Timestamp;
+   token: text;
+ };
+type AdminNotice = 
+ record {
+   body: text;
+   clientId: opt ClientId;
+   createdAt: Timestamp;
+   id: NoticeId;
+   title: text;
+ };
+type AccountId = nat;
+service : {
+  _initialize_access_control: () -> ();
+  _internet_identity_sign_in_finish: () -> (Result__1);
+  _internet_identity_sign_in_start: () -> (blob);
+  adminSignIn: (masterKey: text) -> (opt AdminSession);
+  /// Administrative: approves a payment and issues its receipt.
+  approvePayment: (adminToken: text, paymentId: nat) -> (opt PaymentReceipt);
+  assignCallerUserRole: (user: principal, role: UserRole) -> ();
+  clientSignIn: (input: LoginInput) -> (opt ClientView);
+  /// Administrative: creates a client.
+  createClient: (adminToken: text, input: ClientInput) -> (ClientView);
+  /// Administrative: creates a parish, town or sector.
+  createCoverage: (adminToken: text, input: CoverageInput) -> (CoverageEntry);
+  /// Public: a visitor requests an installation.
+  createInstallRequest: (input: InstallRequestInput) -> (InstallRequest);
+  /// Administrative: publishes a notice.
+  createNotice: (adminToken: text, input: NoticeInput) -> (AdminNotice);
+  /// Administrative: creates a receiving account.
+  createPaymentAccount: (adminToken: text, input: PaymentAccountInput) ->
+   (PaymentAccount);
+  /// Client: opens a support ticket for the caller's own record.
+  createTicket: (clientToken: text, input: TicketInput) -> (SupportTicket);
+  /// Administrative: deletes a client.
+  deleteClient: (adminToken: text, id: nat) -> (bool);
+  /// Administrative: deletes a coverage entry.
+  deleteCoverage: (adminToken: text, id: nat) -> (bool);
+  execute: (qJson: text) -> (Result) query;
+  getApiDoc: () -> (text) query;
+  getBcvRate: () -> (BcvRate) query;
+  getCallerUserRole: () -> (UserRole) query;
+  /// Administrative: reads any client by id.
+  getClient: (adminToken: text, id: nat) -> (opt ClientView) query;
+  /// Administrative: dashboard indicators.
+  getDashboardMetrics: (adminToken: text) -> (DashboardMetrics) query;
+  /// Client: reads only the caller's own record.
+  getMyClient: (clientToken: text) -> (ClientView) query;
+  isCallerAdmin: () -> (bool) query;
+  /// Administrative: issues an invoice for a client.
+  issueInvoice: (adminToken: text, clientId: nat, period: text, amountUsd:
+   nat, amountBs: nat, bcvRate: nat) -> (Invoice);
+  /// Administrative: lists every support ticket.
+  listAllTickets: (adminToken: text) -> (vec SupportTicket) query;
+  /// Client: lists the caller's own invoices.
+  listClientInvoices: (clientToken: text) -> (vec Invoice) query;
+  /// Client: lists the caller's own notices.
+  listClientNotices: (clientToken: text) -> (vec AdminNotice) query;
+  /// Client: lists the caller's own payment reports.
+  listClientPayments: (clientToken: text) -> (vec PaymentReport) query;
+  /// Client: lists the caller's own tickets.
+  listClientTickets: (clientToken: text) -> (vec SupportTicket) query;
+  /// Administrative: lists every client.
+  listClients: (adminToken: text) -> (vec ClientView) query;
+  listCoverage: () -> (vec CoverageEntry) query;
+  listCoverageByKind: (kind: CoverageKind) -> (vec CoverageEntry) query;
+  listCoverageChildren: (parentId: nat) -> (vec CoverageEntry) query;
+  /// Administrative: lists installation requests.
+  listInstallRequests: (adminToken: text) -> (vec InstallRequest) query;
+  /// Public: the receiving accounts the administrator has configured.
+  listPaymentAccounts: () -> (vec PaymentAccount) query;
+  /// Administrative: payment reports awaiting validation.
+  listPendingPayments: (adminToken: text) -> (vec PaymentReport) query;
+  /// Fetches the official BCV rate from bcv.today and stores it as automatic.
+  refreshBcvRate: () -> (BcvRate);
+  /// Administrative: rejects a payment report.
+  rejectPayment: (adminToken: text, paymentId: nat) -> (opt PaymentReport);
+  /// Administrative: replies to a ticket and updates its status.
+  replyTicket: (adminToken: text, id: nat, adminReply: text, status:
+   TicketStatus) -> (opt SupportTicket);
+  /// Client: reports a payment for the caller's own record.
+  reportPayment: (clientToken: text, input: PaymentReportInput) ->
+   (PaymentReport);
+  requestPasswordRecovery: (input: RecoveryInput) -> (opt RecoveryTicket);
+  resetPassword: (input: ResetInput) -> (bool);
+  schema: () -> (text) query;
+  /// Administrative: searches clients by name, cédula, town or sector.
+  searchClients: (adminToken: text, term: text) -> (vec ClientView) query;
+  /// Idempotently seeds the Municipio Cajigal catalog when empty.
+  seedCoverage: () -> (vec CoverageEntry);
+  setBcvRateAutomatic: (value: nat, valueDate: text) -> (BcvRate);
+  setBcvRateManual: (value: nat, valueDate: text) -> (BcvRate);
+  /// Administrative: suspends or reactivates a client's service.
+  setClientStatus: (adminToken: text, id: nat, status: ServiceStatus) ->
+   (opt ClientView);
+  /// Administrative: approves or rejects an installation request.
+  setInstallRequestStatus: (adminToken: text, id: nat, status:
+   InstallRequestStatus) -> (opt InstallRequest);
+  /// Administrative: activates or deactivates a receiving account.
+  setPaymentAccountActive: (adminToken: text, id: nat, active: bool) ->
+   (opt PaymentAccount);
+  transform: (input: TransformationInput) -> (TransformationOutput) query;
+  /// Administrative: updates a client.
+  updateClient: (adminToken: text, id: nat, input: ClientInput) ->
+   (opt ClientView);
+  /// Administrative: updates a coverage entry.
+  updateCoverage: (adminToken: text, id: nat, input: CoverageInput) ->
+   (opt CoverageEntry);
+  /// Administrative: updates a receiving account.
+  updatePaymentAccount: (adminToken: text, id: nat, input:
+   PaymentAccountInput) -> (opt PaymentAccount);
+}

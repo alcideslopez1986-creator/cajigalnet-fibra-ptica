@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "flows": {
+    "acceso-administrador": {
+      "plan": [
+        "041a08a7dc2447d1",
+        "0447e642f7e8e87f",
+        "04f8df3080fca0d9",
+        "06c77b474facc81f",
+        "151af12428c0558f",
+        "1bf2520bc510cc98",
+        "2da11c14e7e82561",
+        "4a024af2a603f2c8",
+        "4e6b77d17ea0e14c",
+        "5cb6f4334e995a24",
+        "5cd668b73a4d712b",
+        "68d2ba0b20d0d614",
+        "6f2ba34444b36374",
+        "6f383c57ee8502d0",
+        "7489d4867376d5ff",
+        "74cbcefc949c2f09",
+        "7bc03d267e7a34a1",
+        "7f5d1f2b6a24d8b0",
+        "860511754bae8286",
+        "9054c88b7668d4c2",
+        "a1cfaf299dc78c92",
+        "b8c5f4ed9e5a46e9",
+        "c26c0cececed1bad",
+        "c359353d9475fb54"
+      ],
+      "last": "failed"
+    },
+    "acceso-cliente": {
+      "plan": [
+        "49925aa0e2d499fc",
+        "5cb6f4334e995a24",
+        "5d68ba285a0b537e",
+        "6fc74d7bdda739b1",
+        "74a3f5c275e2f257",
+        "7551859eef86c3c6",
+        "83f6f71a6ae1a977",
+        "8be9e58e9937f46f",
+        "9ba087c37a51c16b",
+        "9fa2f89dea42d941",
+        "a56a3effba14fdb5",
+        "a77cb59712c517df",
+        "bf4502833373a11c",
+        "c0b86d548c43cecb",
+        "ca5b079ad42e7f05",
+        "cbb2b554e3ac2549",
+        "d69f235214bf4ea5",
+        "e7fca8fb29fe419f",
+        "eb45812878385515",
+        "f8ad3ec4628b1f05"
+      ],
+      "last": "failed"
+    },
+    "portada-y-solicitud": {
+      "plan": [
+        "232ed5d3d1f7ac56",
+        "2fe7bd9af6688d90",
+        "31bde0d16b83a299",
+        "48bf42b9a4b4a26d",
+        "9755b00678f33d78",
+        "9c17a156ade7ea42",
+        "b0cff36c6aed4b6f",
+        "e4eaeab44f6a26dd",
+        "e8755c679cbd452b"
+      ],
+      "last": "passed"
+    }
+  },
+  "order": [
+    "portada-y-solicitud",
+    "acceso-cliente",
+    "acceso-administrador"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "portada-y-solicitud",
+    "kind": "interactive",
+    "goal": "La portada carga con el emblema y los accesos, y una solicitud de instalación se confirma con su número de referencia",
+    "requirementIndexes": [
+      0,
+      1,
+      2,
+      16,
+      17,
+      18
+    ],
+    "acceptanceCriteriaIndexes": [
+      0,
+      1,
+      14
+    ],
+    "steps": [
+      "Open the app",
+      "Press Solicitar Instalación",
+      "Request an installation with the name Ana Pérez, the cédula 12345678 and the phone 04141234567, choosing the parish and sector shown, and press Enviar solicitud"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Cajigalnet"
+      },
+      {
+        "afterStep": 0,
+        "expectText": "Ingresar"
+      },
+      {
+        "afterStep": 0,
+        "expectText": "Recuperar Contraseña"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "Nombre y apellido"
+      },
+      {
+        "afterStep": 2,
+        "expectText": "Solicitud recibida"
+      },
+      {
+        "afterStep": 2,
+        "expectText": "Tu número de referencia"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "overview": "Aplicación móvil para Cajigalnet, el proveedor de internet por fibra óptica del Municipio Cajigal, con portada 3D, panel de cliente para pagos y soporte, y panel administrativo con facturación en bolívares y dólares.",
+  "features": [
+    "Portada con emblema 3D interactivo y accesos rápidos",
+    "Ingreso de clientes por cédula, teléfono o usuario",
+    "Recuperación de contraseña por WhatsApp con código",
+    "Estado de cuenta, megas contratadas y estado del servicio",
+    "Cuentas de pago con monto en divisas y bolívares según la tasa BCV",
+    "Reporte de pagos y recibos de confirmación compartibles por WhatsApp",
+    "Facturas con número correlativo y tasa BCV aplicada",
+    "Solicitud de instalación con parroquia, pueblo y sector",
+    "Tickets de falla técnica con seguimiento",
+    "Panel administrador con clave maestra, métricas y exportación de reportes"
+  ],
+  "category": "business-management",
+  "tags": [
+    "isp",
+    "billing",
+    "venezuela",
+    "customer-portal",
+    "admin-dashboard"
+  ],
+  "last_updated": "2026-11-20T21:14:37.288Z"
+}

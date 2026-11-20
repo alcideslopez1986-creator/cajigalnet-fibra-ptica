@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "flows": {
+    "acceso-administrador": {
+      "flowId": "acceso-administrador",
+      "specDigest": "b1f48f541b9e5678906e8cbdbcbcaa0d4e7a145893b5380e1311f19c7be739de",
+      "status": "record-failed",
+      "recordedAt": "2026-11-20T21:36:56.990Z",
+      "recordedBy": "deepseek-v4.1-flash",
+      "entries": []
+    },
+    "acceso-cliente": {
+      "flowId": "acceso-cliente",
+      "specDigest": "b13832620a5bf76a1ce40cbfe17a8403d4b11c89205627b0d6bc8ab279eee740",
+      "status": "record-failed",
+      "recordedAt": "2026-11-20T21:36:56.990Z",
+      "recordedBy": "deepseek-v4.1-flash",
+      "entries": []
+    },
+    "portada-y-solicitud": {
+      "flowId": "portada-y-solicitud",
+      "specDigest": "4097438b221f7e15f4d141ecc379ec3c09d9f778496160ed72dfe68eb8e88b30",
+      "status": "recorded",
+      "recordedAt": "2026-11-20T21:36:56.989Z",
+      "recordedBy": "deepseek-v4.1-flash",
+      "entries": [
+        "3a63a95441d63925f863d301323e27cec7a317bc9c8b3d733ece7233951a4e95.json",
+        "b3436208666df5329b29a2da4936d11175fae6cb73015b9af13469c5e80c1dbb.json"
+      ],
+      "ranAfter": [],
+      "ranWith": []
+    }
+  }
+}
